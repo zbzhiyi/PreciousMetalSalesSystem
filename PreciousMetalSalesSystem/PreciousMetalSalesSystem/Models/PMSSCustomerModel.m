@@ -15,7 +15,7 @@
 {
     NSInteger points = (NSInteger)orderPrice;
     points = points*self.level.pointScale;
-    self.points =+ points;
+    self.points = self.points + points;
     [self.level resetLevel:self.points];
 }
 

@@ -10,6 +10,7 @@
 #import "PMSSCalculatedManager.h"
 #import "PMSSOrderModel.h"
 #import "PMSSGoodsFactory.h"
+#import "PMSSCustomerFactory.h"
 
 @interface ViewController ()
 
@@ -26,6 +27,13 @@
     NSDictionary *templateServiceData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
     PMSSOrderModel *orderModel = [[PMSSOrderModel alloc] initWithData:templateServiceData];
     CGFloat price = [PMSSCalculatedManager calculatedPriceByOrder:orderModel];
+    
+    PMSSCustomerFactory *customerFactory = [PMSSCustomerFactory sharedInstance];
+    PMSSCustomerModel *customer = [customerFactory getCustomerByMemberId:orderModel.memberId];
+    [customer resetPoints:price];
+    
+    
+    
 }
 
 
