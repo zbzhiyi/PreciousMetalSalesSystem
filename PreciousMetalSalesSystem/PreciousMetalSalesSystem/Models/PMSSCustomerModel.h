@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) PMSSLevelModel *level;
 
 -(id)initWithData:(NSDictionary *) data;
+-(void)resetPoints:(CGFloat) orderPrice;
 
 @end
 

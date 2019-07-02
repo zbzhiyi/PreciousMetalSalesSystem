@@ -20,20 +20,7 @@
 		39ACF18B22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF18A22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m */; };
 		724ABA7822CB4A2C00E10D3D /* PMSSGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA7722CB4A2C00E10D3D /* PMSSGoodsModel.m */; };
 		724ABA7C22CB500E00E10D3D /* PMSSGoodsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA7B22CB500E00E10D3D /* PMSSGoodsFactory.m */; };
-		724ABA8422CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA8322CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m */; };
-		724ABA8F22CB5E9A00E10D3D /* PMSSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA8E22CB5E9A00E10D3D /* PMSSTestCase.m */; };
-		724ABA9122CB5EBF00E10D3D /* PMSSGoodsTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA9022CB5EBF00E10D3D /* PMSSGoodsTestCase.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		724ABA8622CB5D2000E10D3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 39ACF15A22CB436D00E4DAE6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 39ACF16122CB436D00E4DAE6;
-			remoteInfo = PreciousMetalSalesSystem;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		39ACF16222CB436D00E4DAE6 /* PreciousMetalSalesSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreciousMetalSalesSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,23 +47,10 @@
 		724ABA7722CB4A2C00E10D3D /* PMSSGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSGoodsModel.m; sourceTree = "<group>"; };
 		724ABA7A22CB500E00E10D3D /* PMSSGoodsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSGoodsFactory.h; sourceTree = "<group>"; };
 		724ABA7B22CB500E00E10D3D /* PMSSGoodsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSGoodsFactory.m; sourceTree = "<group>"; };
-		724ABA8122CB5D1F00E10D3D /* PreciousMetalSalesSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreciousMetalSalesSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		724ABA8322CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreciousMetalSalesSystemTests.m; sourceTree = "<group>"; };
-		724ABA8522CB5D2000E10D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		724ABA8D22CB5E9A00E10D3D /* PMSSTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSTestCase.h; sourceTree = "<group>"; };
-		724ABA8E22CB5E9A00E10D3D /* PMSSTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSTestCase.m; sourceTree = "<group>"; };
-		724ABA9022CB5EBF00E10D3D /* PMSSGoodsTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSGoodsTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		39ACF15F22CB436D00E4DAE6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		724ABA7E22CB5D1F00E10D3D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				39ACF16422CB436D00E4DAE6 /* PreciousMetalSalesSystem */,
-				724ABA8222CB5D2000E10D3D /* PreciousMetalSalesSystemTests */,
 				39ACF16322CB436D00E4DAE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				39ACF16222CB436D00E4DAE6 /* PreciousMetalSalesSystem.app */,
-				724ABA8122CB5D1F00E10D3D /* PreciousMetalSalesSystemTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,18 +130,6 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
-		724ABA8222CB5D2000E10D3D /* PreciousMetalSalesSystemTests */ = {
-			isa = PBXGroup;
-			children = (
-				724ABA8322CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m */,
-				724ABA8522CB5D2000E10D3D /* Info.plist */,
-				724ABA8D22CB5E9A00E10D3D /* PMSSTestCase.h */,
-				724ABA8E22CB5E9A00E10D3D /* PMSSTestCase.m */,
-				724ABA9022CB5EBF00E10D3D /* PMSSGoodsTestCase.m */,
-			);
-			path = PreciousMetalSalesSystemTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,24 +150,6 @@
 			productReference = 39ACF16222CB436D00E4DAE6 /* PreciousMetalSalesSystem.app */;
 			productType = "com.apple.product-type.application";
 		};
-		724ABA8022CB5D1F00E10D3D /* PreciousMetalSalesSystemTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 724ABA8A22CB5D2000E10D3D /* Build configuration list for PBXNativeTarget "PreciousMetalSalesSystemTests" */;
-			buildPhases = (
-				724ABA7D22CB5D1F00E10D3D /* Sources */,
-				724ABA7E22CB5D1F00E10D3D /* Frameworks */,
-				724ABA7F22CB5D1F00E10D3D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				724ABA8722CB5D2000E10D3D /* PBXTargetDependency */,
-			);
-			name = PreciousMetalSalesSystemTests;
-			productName = PreciousMetalSalesSystemTests;
-			productReference = 724ABA8122CB5D1F00E10D3D /* PreciousMetalSalesSystemTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,10 +161,6 @@
 				TargetAttributes = {
 					39ACF16122CB436D00E4DAE6 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					724ABA8022CB5D1F00E10D3D = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 39ACF16122CB436D00E4DAE6;
 					};
 				};
 			};
@@ -240,7 +178,6 @@
 			projectRoot = "";
 			targets = (
 				39ACF16122CB436D00E4DAE6 /* PreciousMetalSalesSystem */,
-				724ABA8022CB5D1F00E10D3D /* PreciousMetalSalesSystemTests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,13 +190,6 @@
 				39ACF17222CB437000E4DAE6 /* LaunchScreen.storyboard in Resources */,
 				39ACF16F22CB437000E4DAE6 /* Assets.xcassets in Resources */,
 				39ACF16D22CB436E00E4DAE6 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		724ABA7F22CB5D1F00E10D3D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,25 +213,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		724ABA7D22CB5D1F00E10D3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				724ABA8F22CB5E9A00E10D3D /* PMSSTestCase.m in Sources */,
-				724ABA8422CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m in Sources */,
-				724ABA9122CB5EBF00E10D3D /* PMSSGoodsTestCase.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		724ABA8722CB5D2000E10D3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 39ACF16122CB436D00E4DAE6 /* PreciousMetalSalesSystem */;
-			targetProxy = 724ABA8622CB5D2000E10D3D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		39ACF16B22CB436E00E4DAE6 /* Main.storyboard */ = {
@@ -467,42 +379,6 @@
 			};
 			name = Release;
 		};
-		724ABA8822CB5D2000E10D3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PreciousMetalSalesSystemTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "---.PreciousMetalSalesSystemTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PreciousMetalSalesSystem.app/PreciousMetalSalesSystem";
-			};
-			name = Debug;
-		};
-		724ABA8922CB5D2000E10D3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = PreciousMetalSalesSystemTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "---.PreciousMetalSalesSystemTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PreciousMetalSalesSystem.app/PreciousMetalSalesSystem";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -520,15 +396,6 @@
 			buildConfigurations = (
 				39ACF17922CB437000E4DAE6 /* Debug */,
 				39ACF17A22CB437000E4DAE6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		724ABA8A22CB5D2000E10D3D /* Build configuration list for PBXNativeTarget "PreciousMetalSalesSystemTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				724ABA8822CB5D2000E10D3D /* Debug */,
-				724ABA8922CB5D2000E10D3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

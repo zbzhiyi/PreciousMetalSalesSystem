@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PMSSCalculatedManager : NSObject
 
-+(CGFloat)calculatedByOrder:(PMSSOrderModel *) orderModel;
++(CGFloat)calculatedPriceByOrder:(PMSSOrderModel *) orderModel;
 
 @end
 

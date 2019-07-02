@@ -8,12 +8,33 @@
 
 #import "PMSSCalculatedManager.h"
 #import "PMSSCustomerFactory.h"
+#import "PMSSGoodsFactory.h"
 
 @implementation PMSSCalculatedManager
 
-+(CGFloat)calculatedByOrder:(PMSSOrderModel *) orderModel
++(CGFloat)calculatedPriceByOrder:(PMSSOrderModel *) orderModel
 {
-    PMSSCustomerModel *customerModel = [PMSSCustomerFactory sharedInstance];
+    NSMutableDictionary *goodModelGroupDic = [NSMutableDictionary dictionaryWithCapacity:0];
+    for (PMSSGoodsModel *goodModel in orderModel.goodModelArray)
+    {
+        NSMutableArray *groupedGoodsArray = [goodModelGroupDic objectForKey:goodModel.goodId];
+        if (!groupedGoodsArray) {
+            groupedGoodsArray = [NSMutableArray arrayWithCapacity:0];
+        }
+        [groupedGoodsArray addObject:goodModel];
+        [goodModelGroupDic setObject:groupedGoodsArray forKey:goodModel.goodId];
+    }
+    
+    CGFloat orderPrice = 0;
+    for (NSString *key in goodModelGroupDic.allKeys)
+    {
+        NSMutableArray *groupedGoodsArray = [goodModelGroupDic objectForKey:key];
+        if (groupedGoodsArray.count > 0) {
+//            orderPrice = orderPrice + [PMSSGoodsFactory get];
+        }
+    }
+    return orderPrice;
+    
     return 0;
 }
 

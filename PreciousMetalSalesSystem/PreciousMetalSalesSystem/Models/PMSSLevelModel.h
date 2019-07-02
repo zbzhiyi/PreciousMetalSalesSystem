@@ -40,6 +40,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) CGFloat pointScale;
 
 -(id)initWithLevelName:(NSString *) levelName;
+-(void)resetLevel:(NSInteger) points;
 
 @end
 

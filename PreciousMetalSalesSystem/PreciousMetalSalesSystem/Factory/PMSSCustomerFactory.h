@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)buildCustomerData;
 
-- (void)buildCustomerData;
+- (PMSSCustomerModel *)getCustomerByMemberId:(NSString *) memberId;
 
 @end
 

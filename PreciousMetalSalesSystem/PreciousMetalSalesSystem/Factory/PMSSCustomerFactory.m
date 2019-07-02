@@ -32,5 +32,10 @@
     self.customerDic = mCustomerDic;
 }
 
+- (PMSSCustomerModel *)getCustomerByMemberId:(NSString *) memberId
+{
+    return self.customerDic[memberId];
+}
+
 
 @end

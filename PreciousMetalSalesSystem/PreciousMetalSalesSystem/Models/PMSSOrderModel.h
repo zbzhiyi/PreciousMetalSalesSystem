@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSArray *goodModelArray;
 
+@property (nonatomic, copy) NSArray *discountCards;
 
 @end
 

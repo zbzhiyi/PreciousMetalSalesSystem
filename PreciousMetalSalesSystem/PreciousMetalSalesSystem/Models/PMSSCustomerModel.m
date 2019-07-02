@@ -11,15 +11,12 @@
 
 @implementation PMSSCustomerModel
 
--(void)resetAmount:(CGFloat) payment
+-(void)resetPoints:(CGFloat) orderPrice
 {
-
-}
-
--(void)resetPoints:(NSString *) payment
-{
-    CGFloat paymentValue = [payment floatValue];
-
+    NSInteger points = (NSInteger)orderPrice;
+    points = points*self.level.pointScale;
+    self.points =+ points;
+    [self.level resetLevel:self.points];
 }
 
 -(id)initWithData:(NSDictionary *) data
