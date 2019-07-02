@@ -45,7 +45,7 @@
     model1.disModel.discoutName =@"9折券";
     model1.disModel.discoutNum = 0.9;
     model1.disModel.discoutType = DiscountType9;
-    [self.goodsDictionary setObject:model1 forKey:model.goodId];
+    [self.goodsDictionary setObject:model1 forKey:model1.goodId];
     
     //招财进宝
     PMSSGoodsModel *model2 = [[PMSSGoodsModel alloc] init];
@@ -57,8 +57,7 @@
     model2.disModel.discoutName =@"95折券";
     model2.disModel.discoutNum = 0.95;
     model2.disModel.discoutType = DiscountType95;
-   
-    [self.goodsDictionary setObject:model2 forKey:model.goodId];
+    [self.goodsDictionary setObject:model2 forKey:model2.goodId];
     
     //水晶之恋
     PMSSGoodsModel *model3 = [[PMSSGoodsModel alloc] init];
@@ -67,16 +66,16 @@
     model3.goodUnit = @"条";
     model3.goodPrice = 980;
     model3.fullSubArray = @[@(FullSubTypeSubHalf),@(FullSubTypeSubOne)];
-    [self.goodsDictionary setObject:model3 forKey:model.goodId];
+    [self.goodsDictionary setObject:model3 forKey:model3.goodId];
     
     //中国经典钱币套装
     PMSSGoodsModel *model4 = [[PMSSGoodsModel alloc] init];
-    model3.goodName = @"中国经典钱币套装";
-    model3.goodId = @"002002";
-    model3.goodUnit = @"套";
-    model3.goodPrice = 998;
-    model3.fullSubArray = @[@(FullSubTypeTwo),@(FullSubTypeOne)];
-    [self.goodsDictionary setObject:model4 forKey:model.goodId];
+    model4.goodName = @"中国经典钱币套装";
+    model4.goodId = @"002002";
+    model4.goodUnit = @"套";
+    model4.goodPrice = 998;
+    model4.fullSubArray = @[@(FullSubTypeTwo),@(FullSubTypeOne)];
+    [self.goodsDictionary setObject:model4 forKey:model4.goodId];
     
     
     //守扩之羽比翼双飞4.8g
@@ -90,7 +89,7 @@
     model5.disModel.discoutName =@"95折券";
     model5.disModel.discoutNum = 0.95;
     model5.disModel.discoutType = DiscountType95;
-    [self.goodsDictionary setObject:model5 forKey:model.goodId];
+    [self.goodsDictionary setObject:model5 forKey:model5.goodId];
     
     //国银象棋12g
     PMSSGoodsModel *model6 = [[PMSSGoodsModel alloc] init];
@@ -103,13 +102,7 @@
     model6.disModel.discoutName =@"9折券";
     model6.disModel.discoutNum = 0.9;
     model6.disModel.discoutType = DiscountType9;
-    [self.goodsDictionary setObject:model6 forKey:model.goodId];
-    
-    
-    
-    
-    
-    
+    [self.goodsDictionary setObject:model6 forKey:model6.goodId];
 }
 
 - (PMSSGoodsModel *)getModelFromID:(NSString *)goodsId
@@ -118,7 +111,6 @@
     return [self.goodsDictionary objectForKey:goodsId];
     
 }
-
 
 - (CGFloat)getTotalPriceWithGoodModel:(PMSSGoodsModel *)goodModel amount:(NSUInteger)amount discountArray:(NSArray *)array
 {
@@ -144,23 +136,59 @@
     if (goodModel.fullSubArray.count == 0)
     {
         fullSubPrice = originTotalPrice;
-    }else
+    } else
     {
-        
-        
-        
-        
-        
-        
-        
+        for (NSNumber *typeFlag in goodModel.fullSubArray)
+        {
+            CGFloat fullSubPriceForType = [self getTotalPriceWithGoodModel:goodModel amount:amount fullSubType:[typeFlag integerValue]];
+            if (fullSubPriceForType < fullSubPrice) {
+                fullSubPrice = fullSubPriceForType;
+            }
+        }
     }
     
-    
-    
-    
-    return 0.0;
+    return fullSubPrice<discountPrice?fullSubPrice:discountPrice;
 }
 
+- (CGFloat)getTotalPriceWithGoodModel:(PMSSGoodsModel *)goodModel amount:(NSUInteger)amount fullSubType:(FullSubType)fullSubType
+{
+    CGFloat totalPrice = goodModel.goodPrice*amount;
+
+    switch (fullSubType) {
+        case FullSubTypeOne:
+            {
+                totalPrice = totalPrice - (totalPrice/1000)*10;
+            }
+            break;
+        case FullSubTypeTwo:
+        {
+            totalPrice = totalPrice - (totalPrice/2000)*30;
+        }
+            break;
+        case FullSubTypeThree:
+        {
+            totalPrice = totalPrice - (totalPrice/3000)*350;
+        }
+            break;
+        case FullSubTypeSubHalf:
+        {
+            if (amount >= 3) {
+                totalPrice = totalPrice - goodModel.goodPrice/2.0;
+            }
+        }
+            break;
+        case FullSubTypeSubOne:
+        {
+            if (amount >= 4) {
+                totalPrice = totalPrice - goodModel.goodPrice;
+            }
+        }
+            break;
+        default:
+            break;
+    }
+    return totalPrice;
+}
 
 
 

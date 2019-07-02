@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "PMSSCalculatedManager.h"
+#import "PMSSOrderModel.h"
+#import "PMSSGoodsFactory.h"
 
 @interface ViewController ()
 
@@ -17,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"simple_command" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:strPath];
+    NSDictionary *templateServiceData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    PMSSOrderModel *orderModel = [[PMSSOrderModel alloc] initWithData:templateServiceData];
+    CGFloat price = [PMSSCalculatedManager calculatedPriceByOrder:orderModel];
 }
 
 

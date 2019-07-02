@@ -7,6 +7,7 @@
 //
 
 #import "PMSSOrderModel.h"
+#import "PMSSGoodsFactory.h"
 
 @implementation PMSSOrderModel
 
@@ -18,11 +19,16 @@
         self.memberId = data[@"memberId"];
         self.createTime = data[@"createTime"];
         
+        PMSSGoodsFactory *goodsFactory = [[PMSSGoodsFactory alloc] init];
+        
         NSArray *orderArray = data[@"items"];
         NSMutableArray *mGoodModelArray = [NSMutableArray arrayWithCapacity:0];
-        for (NSDictionary *orderDic in orderArray) {
-            PMSSGoodsModel *good = [[PMSSGoodsModel alloc] init];
-            [mGoodModelArray addObject:good];
+        for (NSDictionary *orderDic in orderArray)
+        {
+            PMSSGoodsModel *good = [goodsFactory getModelFromID:orderDic[@"product"]];
+            if (good) {
+                [mGoodModelArray addObject:good];
+            }
         }
         self.goodModelArray = mGoodModelArray;
     }

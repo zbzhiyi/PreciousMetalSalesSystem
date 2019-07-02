@@ -29,13 +29,13 @@
     for (NSString *key in goodModelGroupDic.allKeys)
     {
         NSMutableArray *groupedGoodsArray = [goodModelGroupDic objectForKey:key];
-        if (groupedGoodsArray.count > 0) {
-//            orderPrice = orderPrice + [PMSSGoodsFactory get];
+        if (groupedGoodsArray.count > 0)
+        {
+            PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
+            orderPrice = orderPrice + [factory getTotalPriceWithGoodModel:groupedGoodsArray[0] amount:groupedGoodsArray.count discountArray:orderModel.discountCards];
         }
     }
     return orderPrice;
-    
-    return 0;
 }
 
 
