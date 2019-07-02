@@ -7,7 +7,6 @@
 //
 
 #import "PMSSCustomerFactory.h"
-#import "PMSSCustomerModel.h"
 
 @implementation PMSSCustomerFactory
 + (PMSSCustomerFactory *)sharedInstance

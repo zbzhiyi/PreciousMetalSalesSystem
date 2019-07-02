@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PMSSCustomerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSDictionary *customerDic;
 
 + (PMSSCustomerFactory *)sharedInstance;
+
+- (void)buildCustomerData;
 
 - (void)buildCustomerData;
 

@@ -11,12 +11,9 @@
 
 @implementation PMSSCustomerModel
 
--(void)resetAmount:(NSString *) payment
+-(void)resetAmount:(CGFloat) payment
 {
-    CGFloat paymentValue = [payment floatValue];
-    CGFloat amountValue = [self.amount floatValue];
-    amountValue = amountValue - paymentValue;
-    self.amount = [NSString stringWithFormat:@"%f",amountValue];
+
 }
 
 -(void)resetPoints:(NSString *) payment
