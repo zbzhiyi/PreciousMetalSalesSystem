@@ -22,6 +22,20 @@
 -(void)resetPoints:(NSString *) payment
 {
     CGFloat paymentValue = [payment floatValue];
-    
+
 }
+
+-(id)initWithData:(NSDictionary *) data
+{
+    self = [super init];
+    if (self) {
+        self.amount = CGFLOAT_MAX;
+        self.name = data[@"Name"];
+        self.memberId = data[@"MemberId"];
+        self.points = [data[@"Points"] integerValue];
+        self.level = [[PMSSLevelModel alloc] initWithLevelName:data[@"LevelName"]];
+    }
+    return self;
+}
+
 @end

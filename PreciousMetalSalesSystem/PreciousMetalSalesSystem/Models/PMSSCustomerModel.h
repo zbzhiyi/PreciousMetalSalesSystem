@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  账户余额
  */
-@property (nonatomic, copy) NSString *amount;
+@property (nonatomic, assign) CGFloat amount;
 
 /**
  用户积分
@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
  用户等级
  */
 @property (nonatomic, strong) PMSSLevelModel *level;
+
+-(id)initWithData:(NSDictionary *) data;
 
 @end
 

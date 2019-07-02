@@ -10,40 +10,13 @@
 
 @implementation PMSSLevelModel
 
--(id)initWithLevel:(CustomerLevelType ) level
+-(id)initWithLevelName:(NSString *) levelName
 {
     self = [super init];
     if (self) {
-        self.level = level;
-        switch (self.level) {
-            case CustomerLevelOfOrdinaryCard:
-            {
-                self.levelName = @"普通卡";
-                self.pointScale = 1;
-            }
-                break;
-            case CustomerLevelOfGoldCard:
-            {
-                self.levelName = @"金卡";
-                self.pointScale = 1.5;
-            }
-                break;
-            case CustomerLevelOfPlatinumCard:
-            {
-                self.levelName = @"白金卡";
-                self.pointScale = 1.8;
-            }
-                break;
-            case CustomerLevelOfDiamondCard:
-            {
-                self.levelName = @"钻石卡";
-                self.pointScale = 2;
-            }
-                break;
-                
-            default:
-                break;
-        }
+        self.levelName = levelName;
+        NSDictionary *pointScale = @{@"普通卡":@"1",@"金卡":@"1.5",@"白金卡":@"1.8",@"钻石卡":@"2"};
+        self.pointScale = [pointScale[self.levelName] floatValue];
     }
     return self;
 }

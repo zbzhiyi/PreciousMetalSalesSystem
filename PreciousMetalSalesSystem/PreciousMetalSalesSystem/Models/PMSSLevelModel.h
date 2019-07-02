@@ -39,7 +39,7 @@ typedef enum : NSUInteger {
  */
 @property (nonatomic, assign) CGFloat pointScale;
 
--(id)initWithLevel:(CustomerLevelType ) level;
+-(id)initWithLevelName:(NSString *) levelName;
 
 @end
 
