@@ -7,8 +7,15 @@
 //
 
 #import "PMSSGoodsModel.h"
+#import "PMSSGoodsFactory.h"
 
 @implementation PMSSGoodsModel
+
+-(NSString *)getGoodPrintInfo
+{
+    NSString *printString = [NSString stringWithFormat:@"(%@)%@X%ld, %0.2f, %0.2f",self.goodId,self.goodName,(long)self.amount,self.goodPrice,self.goodPrice*self.amount];
+    return printString;
+}
 
 
 @end

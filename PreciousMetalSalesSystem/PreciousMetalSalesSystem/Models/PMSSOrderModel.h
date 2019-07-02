@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PMSSGoodsModel.h"
+#import "PMSSCustomerFactory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *memberId;
 
 /**
+ 订单所属用户对象
+ */
+@property (nonatomic, strong) PMSSCustomerModel *customerModel;
+
+/**
  订单创建时间
  */
 @property (nonatomic, copy) NSString *createTime;
@@ -35,8 +41,35 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSArray *discountCards;
 
+/**
+ 打折金额
+ */
+@property (nonatomic, assign) CGFloat discountPrice;
+
+/**
+ 原有金额
+ */
+@property (nonatomic, assign) CGFloat originTotalPrice;
+
+
+/**
+ 新增积分
+ */
+@property (nonatomic, assign) NSInteger points;
+
+/**
+ 用户是否升级
+ */
+@property (nonatomic, assign) BOOL isUpdateLevel;
+
+
+
 -(id)initWithData:(NSDictionary *)data;
 
+-(void)writePaymentInfoToFile;
+-(void)writeOrderDiscountInfoToFile;
+-(void)writeOrderInfoToFile;
+-(void)writePointsInfoToFile;
 
 @end
 

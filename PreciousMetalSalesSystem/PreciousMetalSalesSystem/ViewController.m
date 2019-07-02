@@ -25,15 +25,23 @@
     NSString *strPath = [[NSBundle mainBundle] pathForResource:@"simple_command" ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:strPath];
     NSDictionary *templateServiceData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    
     PMSSOrderModel *orderModel = [[PMSSOrderModel alloc] initWithData:templateServiceData];
     CGFloat price = [PMSSCalculatedManager calculatedPriceByOrder:orderModel];
-    
-    PMSSCustomerFactory *customerFactory = [PMSSCustomerFactory sharedInstance];
-    PMSSCustomerModel *customer = [customerFactory getCustomerByMemberId:orderModel.memberId];
-    [customer resetPoints:price];
+    orderModel.discountPrice = orderModel.originTotalPrice - price;
     
     
     
+    NSInteger oldPoint = orderModel.customerModel.points;
+    NSString *oldLeveName = orderModel.customerModel.level.levelName;
+    [orderModel.customerModel resetPoints:price];
+    orderModel.points = orderModel.customerModel.points - oldPoint;
+    orderModel.isUpdateLevel = ![orderModel.customerModel.level.levelName isEqualToString:oldLeveName];
+    
+    [orderModel writeOrderInfoToFile];
+    [orderModel writeOrderDiscountInfoToFile];
+    [orderModel writePaymentInfoToFile];
+    [orderModel writePointsInfoToFile];
 }
 
 

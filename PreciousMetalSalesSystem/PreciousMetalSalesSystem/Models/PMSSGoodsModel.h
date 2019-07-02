@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PMSSDiscountModel.h"
 typedef NS_ENUM(NSInteger, FullSubType) {
     FullSubTypeThree,     //满三千减350
@@ -49,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) NSInteger amount;
 
+
 /**
  商品满减优惠集合
  FullSubTypeThree,     //满三千减350
@@ -68,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong)PMSSDiscountModel *disModel;
 
-
+-(NSString *)getGoodPrintInfo;
 @end
 
 NS_ASSUME_NONNULL_END
