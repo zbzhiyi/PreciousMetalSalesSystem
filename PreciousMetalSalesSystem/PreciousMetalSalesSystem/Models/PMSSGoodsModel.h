@@ -11,12 +11,15 @@ typedef NS_ENUM(NSInteger, FullSubType) {
     FullSubTypeThree,     //满三千减350
     FullSubTypeTwo,       //  满两千减30
     FullSubTypeOne,      //满一千减10
+    FullSubTypeSubHalf,      //第3件半价（买3件及以上，其中1件半价）
+    FullSubTypeSubOne,      //满3送1（买4件及以上，其中1件免费）
     
 };
 
 typedef NS_ENUM(NSInteger, DiscountType) {
-    DiscountType9,        //满三千减350
-    DiscountType95,       //  满两千减30
+    DiscountTypeNone,     //默认为不可用
+    DiscountType9,        //可用9折券
+    DiscountType95,       // 可用95折券
     
     
 };
