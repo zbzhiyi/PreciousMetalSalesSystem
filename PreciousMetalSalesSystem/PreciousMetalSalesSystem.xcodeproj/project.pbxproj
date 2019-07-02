@@ -14,6 +14,7 @@
 		39ACF17222CB437000E4DAE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39ACF17022CB437000E4DAE6 /* LaunchScreen.storyboard */; };
 		39ACF17522CB437000E4DAE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF17422CB437000E4DAE6 /* main.m */; };
 		39ACF17E22CB494700E4DAE6 /* PMSSCustomerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF17D22CB494700E4DAE6 /* PMSSCustomerModel.m */; };
+		39ACF18122CB525600E4DAE6 /* PMSSLevelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF18022CB525600E4DAE6 /* PMSSLevelModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		39ACF17422CB437000E4DAE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39ACF17C22CB494700E4DAE6 /* PMSSCustomerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSCustomerModel.h; sourceTree = "<group>"; };
 		39ACF17D22CB494700E4DAE6 /* PMSSCustomerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSCustomerModel.m; sourceTree = "<group>"; };
+		39ACF17F22CB525600E4DAE6 /* PMSSLevelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSLevelModel.h; sourceTree = "<group>"; };
+		39ACF18022CB525600E4DAE6 /* PMSSLevelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSLevelModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 			children = (
 				39ACF17C22CB494700E4DAE6 /* PMSSCustomerModel.h */,
 				39ACF17D22CB494700E4DAE6 /* PMSSCustomerModel.m */,
+				39ACF17F22CB525600E4DAE6 /* PMSSLevelModel.h */,
+				39ACF18022CB525600E4DAE6 /* PMSSLevelModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				39ACF17E22CB494700E4DAE6 /* PMSSCustomerModel.m in Sources */,
 				39ACF16A22CB436E00E4DAE6 /* ViewController.m in Sources */,
 				39ACF17522CB437000E4DAE6 /* main.m in Sources */,
+				39ACF18122CB525600E4DAE6 /* PMSSLevelModel.m in Sources */,
 				39ACF16722CB436D00E4DAE6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
