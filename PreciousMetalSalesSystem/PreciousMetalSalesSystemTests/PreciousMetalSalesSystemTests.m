@@ -11,6 +11,8 @@
 #import "PMSSCustomerModel.h"
 #import "PMSSGoodsFactory.h"
 #import "PMSSGoodsModel.h"
+#import "PMSSOrderModel.h"
+#import "PMSSCalculatedManager.h"
 @interface PreciousMetalSalesSystemTests : XCTestCase
 
 @end
@@ -47,6 +49,17 @@
     PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
     PMSSGoodsModel *model = [factory getModelFromID:goodId];
     XCTAssertTrue(model.goodPrice == 998);
+}
+- (void)testCalculatePrice
+{
+    NSString *strPath = [[NSBundle mainBundle] pathForResource:@"simple_command" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:strPath];
+    NSDictionary *templateServiceData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    
+    PMSSOrderModel *orderModel = [[PMSSOrderModel alloc] initWithData:templateServiceData];
+    CGFloat price = [PMSSCalculatedManager calculatedPriceByOrder:orderModel];
+    XCTAssertTrue(price == 9860);
+
 }
 - (void)testExample {
     // This is an example of a functional test case.
