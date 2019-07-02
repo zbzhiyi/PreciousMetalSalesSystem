@@ -7,6 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PMSSCustomerFactory.h"
+#import "PMSSCustomerModel.h"
+#import "PMSSGoodsFactory.h"
+#import "PMSSGoodsModel.h"
 @interface PreciousMetalSalesSystemTests : XCTestCase
 
 @end
@@ -21,9 +25,33 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
+/**
+ 根据用户id 来获取用户信息
+ */
+- (void)testUserWithMemberid
+{
+    NSString *memberid = @"6236609999";
+    [[PMSSCustomerFactory sharedInstance] buildCustomerData];
+    PMSSCustomerModel *model = [[PMSSCustomerFactory sharedInstance] getCustomerByMemberId:memberid];
+    XCTAssertNotEqual(model.name, @"马丁");
+    
+    
+}
+
+/**
+ 根据商品id 来获取商品信息
+ */
+- (void)testGoodWithGoodId
+{
+    NSString *goodId = @"001001";
+    PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
+    PMSSGoodsModel *model = [factory getModelFromID:goodId];
+    XCTAssertTrue(model.goodPrice == 998);
+}
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
 }
 
 - (void)testPerformanceExample {
