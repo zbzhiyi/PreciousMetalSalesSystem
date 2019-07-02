@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PMSSGoodsModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PMSSGoodsFactory : NSObject
+
+/**
+ 所有的商品列表，以goodID为Key
+ */
+@property (nonatomic,strong) NSMutableDictionary *goodsDictionary;
+
+- (PMSSGoodsModel *)getModelFromID:(NSString *)goodsId;
 
 @end
 
