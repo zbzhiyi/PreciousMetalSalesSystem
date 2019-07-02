@@ -19,6 +19,7 @@
 		39ACF18822CB5C9100E4DAE6 /* PMSSOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF18722CB5C9100E4DAE6 /* PMSSOrderModel.m */; };
 		39ACF18B22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF18A22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m */; };
 		39ACF19022CB75F200E4DAE6 /* simple_command.json in Resources */ = {isa = PBXBuildFile; fileRef = 39ACF18F22CB75F100E4DAE6 /* simple_command.json */; };
+		39ACF19322CB9AC900E4DAE6 /* PMSSOrderFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF19222CB9AC900E4DAE6 /* PMSSOrderFactory.m */; };
 		724ABA7822CB4A2C00E10D3D /* PMSSGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA7722CB4A2C00E10D3D /* PMSSGoodsModel.m */; };
 		724ABA7C22CB500E00E10D3D /* PMSSGoodsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA7B22CB500E00E10D3D /* PMSSGoodsFactory.m */; };
 		724ABA9422CB6B7C00E10D3D /* PMSSDiscountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA9322CB6B7C00E10D3D /* PMSSDiscountModel.m */; };
@@ -57,6 +58,8 @@
 		39ACF18922CB5F4C00E4DAE6 /* PMSSCalculatedManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSCalculatedManager.h; sourceTree = "<group>"; };
 		39ACF18A22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSCalculatedManager.m; sourceTree = "<group>"; };
 		39ACF18F22CB75F100E4DAE6 /* simple_command.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple_command.json; sourceTree = "<group>"; };
+		39ACF19122CB9AC900E4DAE6 /* PMSSOrderFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSOrderFactory.h; sourceTree = "<group>"; };
+		39ACF19222CB9AC900E4DAE6 /* PMSSOrderFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSOrderFactory.m; sourceTree = "<group>"; };
 		724ABA7622CB4A2C00E10D3D /* PMSSGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSGoodsModel.h; sourceTree = "<group>"; };
 		724ABA7722CB4A2C00E10D3D /* PMSSGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSGoodsModel.m; sourceTree = "<group>"; };
 		724ABA7A22CB500E00E10D3D /* PMSSGoodsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSGoodsFactory.h; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				724ABA7B22CB500E00E10D3D /* PMSSGoodsFactory.m */,
 				39ACF18222CB567100E4DAE6 /* PMSSCustomerFactory.h */,
 				39ACF18322CB567100E4DAE6 /* PMSSCustomerFactory.m */,
+				39ACF19122CB9AC900E4DAE6 /* PMSSOrderFactory.h */,
+				39ACF19222CB9AC900E4DAE6 /* PMSSOrderFactory.m */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				39ACF18B22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m in Sources */,
 				39ACF17522CB437000E4DAE6 /* main.m in Sources */,
 				39ACF18422CB567100E4DAE6 /* PMSSCustomerFactory.m in Sources */,
+				39ACF19322CB9AC900E4DAE6 /* PMSSOrderFactory.m in Sources */,
 				39ACF18122CB525600E4DAE6 /* PMSSLevelModel.m in Sources */,
 				39ACF16722CB436D00E4DAE6 /* AppDelegate.m in Sources */,
 				39ACF18822CB5C9100E4DAE6 /* PMSSOrderModel.m in Sources */,

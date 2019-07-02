@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PMSSCalculatedManager.h"
-#import "PMSSOrderModel.h"
+#import "PMSSOrderFactory.h"
 
 
 @interface ViewController ()
@@ -23,9 +22,10 @@
     
     NSString *strPath = [[NSBundle mainBundle] pathForResource:@"simple_command" ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:strPath];
-    NSDictionary *templateServiceData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *jsonDataDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
     
-    PMSSOrderModel *orderModel = [[PMSSOrderModel alloc] initWithData:templateServiceData];
+    PMSSOrderFactory *orderFactory = [PMSSOrderFactory sharedInstance];
+    PMSSOrderModel *orderModel = [orderFactory buildOrderModelWithData:jsonDataDic];
     [orderModel calculated];
     
     UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-64)];
