@@ -99,7 +99,11 @@
     NSMutableString *infoString = [NSMutableString stringWithString:@"应收合计："];
     [infoString appendFormat:@"%0.2f \n",(self.originTotalPrice- self.discountPrice)];
     [infoString appendString:@"收款：\n"];
-    [infoString appendFormat:@"余额支付%0.2f \n",(self.originTotalPrice- self.discountPrice)];
+
+    for (PMSSDiscountModel *model in self.discountCards) {
+        [infoString appendFormat:@" %@\n",model.discoutName];
+    }    
+    [infoString appendFormat:@" 余额支付%0.2f \n",(self.originTotalPrice- self.discountPrice)];
 
     NSLog(@"%@",infoString);
     return infoString;
