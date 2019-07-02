@@ -56,6 +56,19 @@
     return _customerModel;
 }
 
+-(void)calculated
+{
+    CGFloat price = [PMSSCalculatedManager calculatedPriceByOrder:self];
+    self.discountPrice = self.originTotalPrice - price;
+    
+    NSInteger oldPoint = self.customerModel.points;
+    NSString *oldLeveName = self.customerModel.level.levelName;
+    [self.customerModel resetPoints:price];
+    self.points = self.customerModel.points - oldPoint;
+    self.isUpdateLevel = ![self.customerModel.level.levelName isEqualToString:oldLeveName];
+}
+
+
 -(NSString *)getDiscountPrintInfo:(PMSSGoodsModel *) goodMoled
 {
     PMSSGoodsFactory *goodsFactory = [[PMSSGoodsFactory alloc] init];
@@ -128,8 +141,5 @@
     NSLog(@"%@", logString);
     return logString;
 }
-
-
-
 
 @end

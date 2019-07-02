@@ -39,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSArray *goodModelArray;
 
+/**
+ 折扣券信息：数组元素为PMSSDiscountModel类型
+ */
 @property (nonatomic, copy) NSArray *discountCards;
 
 /**
@@ -62,9 +65,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, assign) BOOL isUpdateLevel;
 
-
-
 -(id)initWithData:(NSDictionary *)data;
+
+-(void)calculated;
 
 -(NSString *)getLogStringOfPaymentInfo;
 -(NSString *)getLogStringOfOrderDiscountInfo;
