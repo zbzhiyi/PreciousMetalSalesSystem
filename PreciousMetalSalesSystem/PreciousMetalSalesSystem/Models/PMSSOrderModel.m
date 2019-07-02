@@ -113,8 +113,9 @@
     [infoString appendFormat:@"%0.2f \n",(self.originTotalPrice- self.discountPrice)];
     [infoString appendString:@"收款：\n"];
 
-    for (PMSSDiscountModel *model in self.discountCards) {
-        [infoString appendFormat:@" %@\n",model.discoutName];
+    PMSSGoodsFactory *goodsFactory = [PMSSGoodsFactory sharedInstance];
+    for (NSString *discoutName in goodsFactory.discountInfoArray) {
+        [infoString appendFormat:@" %@\n",discoutName];
     }    
     [infoString appendFormat:@" 余额支付%0.2f \n",(self.originTotalPrice- self.discountPrice)];
 

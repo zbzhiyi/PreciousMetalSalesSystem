@@ -150,6 +150,16 @@
             }
         }
     }
+    
+    if (!self.discountInfoArray) {
+        self.discountInfoArray = [NSMutableArray arrayWithCapacity:0];
+    }
+    if (discountPrice<fullSubPrice && discountPrice != originTotalPrice)
+    {
+        if (![self.discountInfoArray containsObject:goodModel.disModel.discoutName]) {
+            [self.discountInfoArray addObject:goodModel.disModel.discoutName];
+        }
+    }
     return fullSubPrice<discountPrice?fullSubPrice:discountPrice;
 }
 
@@ -192,11 +202,6 @@
     }
     return totalPrice;
 }
-
-
-
-
-
 
 - (NSMutableDictionary *)goodsDictionary
 {

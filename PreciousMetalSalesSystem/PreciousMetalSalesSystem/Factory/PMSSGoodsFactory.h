@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,strong) NSMutableDictionary *goodsDictionary;
 
+@property (nonatomic,strong) NSMutableArray *discountInfoArray;
+
 - (PMSSGoodsModel *)getModelFromID:(NSString *)goodsId;
 
 - (CGFloat)getTotalPriceWithGoodModel:(PMSSGoodsModel *)goodModel amount:(NSUInteger )amount discountArray:(NSArray *)array;
