@@ -58,6 +58,7 @@
 		39ACF16422CB436D00E4DAE6 /* PreciousMetalSalesSystem */ = {
 			isa = PBXGroup;
 			children = (
+				39ACF17B22CB48A400E4DAE6 /* Models */,
 				39ACF16522CB436D00E4DAE6 /* AppDelegate.h */,
 				39ACF16622CB436D00E4DAE6 /* AppDelegate.m */,
 				39ACF16822CB436E00E4DAE6 /* ViewController.h */,
@@ -69,6 +70,13 @@
 				39ACF17422CB437000E4DAE6 /* main.m */,
 			);
 			path = PreciousMetalSalesSystem;
+			sourceTree = "<group>";
+		};
+		39ACF17B22CB48A400E4DAE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
