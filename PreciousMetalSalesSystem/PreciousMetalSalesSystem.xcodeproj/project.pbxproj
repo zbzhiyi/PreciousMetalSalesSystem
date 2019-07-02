@@ -13,6 +13,7 @@
 		39ACF16F22CB437000E4DAE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39ACF16E22CB437000E4DAE6 /* Assets.xcassets */; };
 		39ACF17222CB437000E4DAE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39ACF17022CB437000E4DAE6 /* LaunchScreen.storyboard */; };
 		39ACF17522CB437000E4DAE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF17422CB437000E4DAE6 /* main.m */; };
+		39ACF17E22CB494700E4DAE6 /* PMSSCustomerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACF17D22CB494700E4DAE6 /* PMSSCustomerModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		39ACF17122CB437000E4DAE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39ACF17322CB437000E4DAE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39ACF17422CB437000E4DAE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		39ACF17C22CB494700E4DAE6 /* PMSSCustomerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSCustomerModel.h; sourceTree = "<group>"; };
+		39ACF17D22CB494700E4DAE6 /* PMSSCustomerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSCustomerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 		39ACF17B22CB48A400E4DAE6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				39ACF17C22CB494700E4DAE6 /* PMSSCustomerModel.h */,
+				39ACF17D22CB494700E4DAE6 /* PMSSCustomerModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39ACF17E22CB494700E4DAE6 /* PMSSCustomerModel.m in Sources */,
 				39ACF16A22CB436E00E4DAE6 /* ViewController.m in Sources */,
 				39ACF17522CB437000E4DAE6 /* main.m in Sources */,
 				39ACF16722CB436D00E4DAE6 /* AppDelegate.m in Sources */,
