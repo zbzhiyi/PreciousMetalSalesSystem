@@ -44,6 +44,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy) NSString *goodUnit;
 
+/**
+ 商品数量
+ */
+@property (nonatomic, assign) NSInteger amount;
 
 /**
  商品满减优惠集合

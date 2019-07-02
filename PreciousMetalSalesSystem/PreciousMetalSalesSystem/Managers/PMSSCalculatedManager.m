@@ -14,27 +14,14 @@
 
 +(CGFloat)calculatedPriceByOrder:(PMSSOrderModel *) orderModel
 {
-    NSMutableDictionary *goodModelGroupDic = [NSMutableDictionary dictionaryWithCapacity:0];
+    CGFloat orderPrice = 0;
+
     for (PMSSGoodsModel *goodModel in orderModel.goodModelArray)
     {
-        NSMutableArray *groupedGoodsArray = [goodModelGroupDic objectForKey:goodModel.goodId];
-        if (!groupedGoodsArray) {
-            groupedGoodsArray = [NSMutableArray arrayWithCapacity:0];
-        }
-        [groupedGoodsArray addObject:goodModel];
-        [goodModelGroupDic setObject:groupedGoodsArray forKey:goodModel.goodId];
+        PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
+        orderPrice = orderPrice + [factory getTotalPriceWithGoodModel:goodModel amount:goodModel.amount discountArray:orderModel.discountCards];
     }
     
-    CGFloat orderPrice = 0;
-    for (NSString *key in goodModelGroupDic.allKeys)
-    {
-        NSMutableArray *groupedGoodsArray = [goodModelGroupDic objectForKey:key];
-        if (groupedGoodsArray.count > 0)
-        {
-            PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
-            orderPrice = orderPrice + [factory getTotalPriceWithGoodModel:groupedGoodsArray[0] amount:groupedGoodsArray.count discountArray:orderModel.discountCards];
-        }
-    }
     return orderPrice;
 }
 

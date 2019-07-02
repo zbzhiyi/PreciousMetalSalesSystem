@@ -26,6 +26,7 @@
         for (NSDictionary *orderDic in orderArray)
         {
             PMSSGoodsModel *good = [goodsFactory getModelFromID:orderDic[@"product"]];
+            good.amount = [orderDic[@"amount"] integerValue];
             if (good) {
                 [mGoodModelArray addObject:good];
             }
