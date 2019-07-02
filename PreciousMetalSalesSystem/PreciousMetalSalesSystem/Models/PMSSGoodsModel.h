@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PMSSDiscountModel.h"
 typedef NS_ENUM(NSInteger, FullSubType) {
     FullSubTypeThree,     //满三千减350
     FullSubTypeTwo,       //  满两千减30
@@ -16,13 +17,7 @@ typedef NS_ENUM(NSInteger, FullSubType) {
     
 };
 
-typedef NS_ENUM(NSInteger, DiscountType) {
-    DiscountTypeNone,     //默认为不可用
-    DiscountType9,        //可用9折券
-    DiscountType95,       // 可用95折券
-    
-    
-};
+
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -42,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  商品价格
  */
-@property (nonatomic, copy) NSString *goodPrice;
+@property (nonatomic, assign) CGFloat goodPrice;
 
 /**
  商品单位
@@ -67,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
  DiscountType9,        //可用9折券
  DiscountType95,       // 可用95折券
  */
-@property (nonatomic, assign)DiscountType disType;
+@property (nonatomic, strong)PMSSDiscountModel *disModel;
 
 
 

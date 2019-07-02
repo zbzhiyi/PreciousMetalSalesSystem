@@ -37,7 +37,7 @@
         self.levelName = @"钻石卡";
     }
     NSDictionary *pointScale = @{@"普通卡":@"1",@"金卡":@"1.5",@"白金卡":@"1.8",@"钻石卡":@"2"};
-
+ 
     self.pointScale = [pointScale[self.levelName] floatValue];
 }
 
