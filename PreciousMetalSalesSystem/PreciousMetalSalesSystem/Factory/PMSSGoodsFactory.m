@@ -9,15 +9,21 @@
 #import "PMSSGoodsFactory.h"
 
 @implementation PMSSGoodsFactory
-
++ (PMSSGoodsFactory *)sharedInstance
+{
+    static PMSSGoodsFactory * customerFactory = nil;
+    static dispatch_once_t t;
+    dispatch_once(&t, ^{
+        customerFactory = [[PMSSGoodsFactory alloc] init];
+    });
+    return customerFactory;
+}
 
 - (instancetype)init
 {
     self = [super init]; // call the designated initializer
     if (self) {
-        
         [self stepGoodsData];
-
     }
     return self;
 }
@@ -107,9 +113,7 @@
 
 - (PMSSGoodsModel *)getModelFromID:(NSString *)goodsId
 {
-    
     return [self.goodsDictionary objectForKey:goodsId];
-    
 }
 
 - (CGFloat)getTotalPriceWithGoodModel:(PMSSGoodsModel *)goodModel amount:(NSUInteger)amount discountArray:(NSArray *)array

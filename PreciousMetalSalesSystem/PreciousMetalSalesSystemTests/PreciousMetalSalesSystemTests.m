@@ -44,7 +44,7 @@
 - (void)testGoodWithGoodId
 {
     NSString *goodId = @"001001";
-    PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
+    PMSSGoodsFactory *factory = [PMSSGoodsFactory sharedInstance];
     PMSSGoodsModel *model = [factory getModelFromID:goodId];
     XCTAssertTrue(model.goodPrice == 998);
 }

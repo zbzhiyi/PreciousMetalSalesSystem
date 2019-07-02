@@ -21,7 +21,7 @@
         self.memberId = data[@"memberId"];
         self.createTime = data[@"createTime"];
         
-        PMSSGoodsFactory *goodsFactory = [[PMSSGoodsFactory alloc] init];
+        PMSSGoodsFactory *goodsFactory = [PMSSGoodsFactory sharedInstance];
         
         NSArray *orderArray = data[@"items"];
         NSMutableArray *mGoodModelArray = [NSMutableArray arrayWithCapacity:0];
@@ -71,7 +71,7 @@
 
 -(NSString *)getDiscountPrintInfo:(PMSSGoodsModel *) goodMoled
 {
-    PMSSGoodsFactory *goodsFactory = [[PMSSGoodsFactory alloc] init];
+    PMSSGoodsFactory *goodsFactory = [PMSSGoodsFactory sharedInstance];
     CGFloat discoutPrice = [goodsFactory getTotalPriceWithGoodModel:goodMoled amount:goodMoled.amount discountArray:self.discountCards];
     discoutPrice = discoutPrice - goodMoled.goodPrice*goodMoled.amount;
     if (discoutPrice < 0) {

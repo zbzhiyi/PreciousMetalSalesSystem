@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PMSSGoodsFactory : NSObject
 
++ (PMSSGoodsFactory *)sharedInstance;
+
+
 /**
  所有的商品列表，以goodID为Key
  */

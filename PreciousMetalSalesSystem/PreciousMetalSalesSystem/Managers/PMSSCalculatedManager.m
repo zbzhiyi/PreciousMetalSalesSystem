@@ -18,7 +18,7 @@
 
     for (PMSSGoodsModel *goodModel in orderModel.goodModelArray)
     {
-        PMSSGoodsFactory *factory = [[PMSSGoodsFactory alloc] init];
+        PMSSGoodsFactory *factory = [PMSSGoodsFactory sharedInstance];
         orderPrice = orderPrice + [factory getTotalPriceWithGoodModel:goodModel amount:goodModel.amount discountArray:orderModel.discountCards];
     }
     
