@@ -38,10 +38,10 @@
     orderModel.points = orderModel.customerModel.points - oldPoint;
     orderModel.isUpdateLevel = ![orderModel.customerModel.level.levelName isEqualToString:oldLeveName];
     
-    [orderModel writeOrderInfoToFile];
-    [orderModel writeOrderDiscountInfoToFile];
-    [orderModel writePaymentInfoToFile];
-    [orderModel writePointsInfoToFile];
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-64)];
+    textView.text = [NSString stringWithFormat:@"%@\n\n%@\n%@\n%@\n%@", [orderModel getLogStringOfOrderInfo],[orderModel getLogStringOfOrderGoodsInfo],[orderModel getLogStringOfOrderDiscountInfo],[orderModel getLogStringOfPaymentInfo],[orderModel getLogStringOfPointsInfo]];
+    
+    [self.view addSubview:textView];
 }
 
 

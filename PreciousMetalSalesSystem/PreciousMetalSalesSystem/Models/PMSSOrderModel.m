@@ -49,6 +49,13 @@
     return self;
 }
 
+-(PMSSCustomerModel *)customerModel
+{
+    PMSSCustomerFactory *customerFactory = [PMSSCustomerFactory sharedInstance];
+    _customerModel = [customerFactory getCustomerByMemberId:self.memberId];
+    return _customerModel;
+}
+
 -(NSString *)getDiscountPrintInfo:(PMSSGoodsModel *) goodMoled
 {
     PMSSGoodsFactory *goodsFactory = [[PMSSGoodsFactory alloc] init];
@@ -61,7 +68,7 @@
     return nil;
 }
 
--(void)writeOrderInfoToFile
+-(NSString *)getLogStringOfOrderGoodsInfo
 {
     NSMutableString *infoString = [NSMutableString stringWithString:@"商品及数量           单价         金额\n"];
     for (PMSSGoodsModel *model in self.goodModelArray) {
@@ -69,11 +76,11 @@
         [infoString appendString:@"\n"];
     }
     [infoString appendFormat:@"合计：%0.2f \n",self.originTotalPrice];
-    
     NSLog(@"%@",infoString);
+    return infoString;
 }
 
--(void)writeOrderDiscountInfoToFile
+-(NSString *)getLogStringOfOrderDiscountInfo
 {
     NSMutableString *infoString = [NSMutableString stringWithString:@"优惠清单：\n"];
     for (PMSSGoodsModel *model in self.goodModelArray) {
@@ -84,10 +91,10 @@
     }
     [infoString appendFormat:@"优化合计：%0.2f \n",self.discountPrice];
     NSLog(@"%@",infoString);
-
+    return infoString;
 }
 
--(void)writePaymentInfoToFile
+-(NSString *)getLogStringOfPaymentInfo
 {
     NSMutableString *infoString = [NSMutableString stringWithString:@"应收合计："];
     [infoString appendFormat:@"%0.2f \n",(self.originTotalPrice- self.discountPrice)];
@@ -95,10 +102,10 @@
     [infoString appendFormat:@"余额支付%0.2f \n",(self.originTotalPrice- self.discountPrice)];
 
     NSLog(@"%@",infoString);
-
+    return infoString;
 }
 
--(void)writePointsInfoToFile
+-(NSString *)getLogStringOfPointsInfo
 {
     NSMutableString *infoString = [NSMutableString stringWithString:@"客户等级与积分："];
     [infoString appendFormat:@"新增积分:%ld\n",(long)self.points];
@@ -108,15 +115,17 @@
     }
     
     NSLog(@"%@",infoString);
-    
+    return infoString;
 }
 
--(PMSSCustomerModel *)customerModel
+-(NSString *)getLogStringOfOrderInfo
 {
-    PMSSCustomerFactory *customerFactory = [PMSSCustomerFactory sharedInstance];
-    _customerModel = [customerFactory getCustomerByMemberId:self.memberId];
-    return _customerModel;
+    NSString *logString = [NSString stringWithFormat:@"方鼎银行贵金属购买凭证 \n 销售单号：%@ 日期：%@ \n 客户卡号：%@  会员姓名：%@ 客户等级：%@ 累计积分: %ld ",self.orderId,self.createTime,self.customerModel.memberId,self.customerModel.name,self.customerModel.level.levelName,self.customerModel.points];
+    NSLog(@"%@", logString);
+    return logString;
 }
+
+
 
 
 @end

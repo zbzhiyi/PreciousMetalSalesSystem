@@ -66,10 +66,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(id)initWithData:(NSDictionary *)data;
 
--(void)writePaymentInfoToFile;
--(void)writeOrderDiscountInfoToFile;
--(void)writeOrderInfoToFile;
--(void)writePointsInfoToFile;
+-(NSString *)getLogStringOfPaymentInfo;
+-(NSString *)getLogStringOfOrderDiscountInfo;
+-(NSString *)getLogStringOfOrderInfo;
+-(NSString *)getLogStringOfPointsInfo;
+-(NSString *)getLogStringOfOrderGoodsInfo;
 
 @end
 
