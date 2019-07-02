@@ -59,7 +59,6 @@
 		724ABA9022CB5EBF00E10D3D /* PMSSGoodsTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSGoodsTestCase.m; sourceTree = "<group>"; };
 		724ABA9222CB6B7C00E10D3D /* PMSSDiscountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSDiscountModel.h; sourceTree = "<group>"; };
 		724ABA9322CB6B7C00E10D3D /* PMSSDiscountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSDiscountModel.m; sourceTree = "<group>"; };
->>>>>>> f05a6aa88fef98c2701b1c564276cec8e2685531
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
