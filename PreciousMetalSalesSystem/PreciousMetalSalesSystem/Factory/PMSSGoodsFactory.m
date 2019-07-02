@@ -93,7 +93,7 @@
     
     //国银象棋12g
     PMSSGoodsModel *model6 = [[PMSSGoodsModel alloc] init];
-    model6.goodName = @"银象棋12g";
+    model6.goodName = @"中国银象棋12g";
     model6.goodId = @"002003";
     model6.goodUnit = @"套";
     model6.goodPrice = 698;
@@ -132,7 +132,7 @@
         }
     }
     
-    CGFloat fullSubPrice = 0.0f;
+    CGFloat fullSubPrice = originTotalPrice;
     if (goodModel.fullSubArray.count == 0)
     {
         fullSubPrice = originTotalPrice;
@@ -157,17 +157,17 @@
     switch (fullSubType) {
         case FullSubTypeOne:
             {
-                totalPrice = totalPrice - (totalPrice/1000)*10;
+                totalPrice = totalPrice - ((int)(totalPrice/1000))*10;
             }
             break;
         case FullSubTypeTwo:
         {
-            totalPrice = totalPrice - (totalPrice/2000)*30;
+            totalPrice = totalPrice - ((int)(totalPrice/2000))*30;
         }
             break;
         case FullSubTypeThree:
         {
-            totalPrice = totalPrice - (totalPrice/3000)*350;
+            totalPrice = totalPrice - ((int)(totalPrice/3000))*350;
         }
             break;
         case FullSubTypeSubHalf:

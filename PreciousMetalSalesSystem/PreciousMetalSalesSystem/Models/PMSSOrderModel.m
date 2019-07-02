@@ -8,6 +8,7 @@
 
 #import "PMSSOrderModel.h"
 #import "PMSSGoodsFactory.h"
+#import "PMSSDiscountModel.h"
 
 @implementation PMSSOrderModel
 
@@ -32,6 +33,15 @@
             }
         }
         self.goodModelArray = mGoodModelArray;
+
+        NSMutableArray *discountCardsModelArray = [NSMutableArray arrayWithCapacity:0];
+        NSArray *discountCardsArray = data[@"discountCards"];
+        for (NSString *discountCardsName in discountCardsArray)
+        {
+            PMSSDiscountModel *model = [[PMSSDiscountModel alloc] initWithName:discountCardsName];
+            [discountCardsModelArray addObject:model];
+        }
+        self.discountCards = discountCardsModelArray;
     }
     return self;
 }

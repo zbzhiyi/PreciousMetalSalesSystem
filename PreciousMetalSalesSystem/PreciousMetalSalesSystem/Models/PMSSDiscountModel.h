@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,assign)DiscountType discoutType;
 
+-(id)initWithName:(NSString *) name;
+
 @end
 
 NS_ASSUME_NONNULL_END
