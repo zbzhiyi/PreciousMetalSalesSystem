@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PMSSGoodsModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSMutableDictionary *goodsDictionary;
 
 - (PMSSGoodsModel *)getModelFromID:(NSString *)goodsId;
+
+- (CGFloat)getTotalPriceWithGoodModel:(PMSSGoodsModel *)goodModel amount:(NSUInteger )amount discountArray:(NSArray *)array;
 
 @end
 

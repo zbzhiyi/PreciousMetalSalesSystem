@@ -23,6 +23,7 @@
 		724ABA8422CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA8322CB5D2000E10D3D /* PreciousMetalSalesSystemTests.m */; };
 		724ABA8F22CB5E9A00E10D3D /* PMSSTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA8E22CB5E9A00E10D3D /* PMSSTestCase.m */; };
 		724ABA9122CB5EBF00E10D3D /* PMSSGoodsTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA9022CB5EBF00E10D3D /* PMSSGoodsTestCase.m */; };
+		724ABA9422CB6B7C00E10D3D /* PMSSDiscountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 724ABA9322CB6B7C00E10D3D /* PMSSDiscountModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		724ABA8D22CB5E9A00E10D3D /* PMSSTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSTestCase.h; sourceTree = "<group>"; };
 		724ABA8E22CB5E9A00E10D3D /* PMSSTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSTestCase.m; sourceTree = "<group>"; };
 		724ABA9022CB5EBF00E10D3D /* PMSSGoodsTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSGoodsTestCase.m; sourceTree = "<group>"; };
+		724ABA9222CB6B7C00E10D3D /* PMSSDiscountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSSDiscountModel.h; sourceTree = "<group>"; };
+		724ABA9322CB6B7C00E10D3D /* PMSSDiscountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSSDiscountModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 				724ABA7722CB4A2C00E10D3D /* PMSSGoodsModel.m */,
 				39ACF18622CB5C9100E4DAE6 /* PMSSOrderModel.h */,
 				39ACF18722CB5C9100E4DAE6 /* PMSSOrderModel.m */,
+				724ABA9222CB6B7C00E10D3D /* PMSSDiscountModel.h */,
+				724ABA9322CB6B7C00E10D3D /* PMSSDiscountModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				724ABA7C22CB500E00E10D3D /* PMSSGoodsFactory.m in Sources */,
 				39ACF17E22CB494700E4DAE6 /* PMSSCustomerModel.m in Sources */,
 				724ABA7822CB4A2C00E10D3D /* PMSSGoodsModel.m in Sources */,
+				724ABA9422CB6B7C00E10D3D /* PMSSDiscountModel.m in Sources */,
 				39ACF16A22CB436E00E4DAE6 /* ViewController.m in Sources */,
 				39ACF18B22CB5F4C00E4DAE6 /* PMSSCalculatedManager.m in Sources */,
 				39ACF17522CB437000E4DAE6 /* main.m in Sources */,

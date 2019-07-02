@@ -32,7 +32,7 @@
     model.goodName = @"世园会五十国钱币册";
     model.goodId = @"001001";
     model.goodUnit = @"册";
-    model.goodPrice = @"998";
+    model.goodPrice = 998;
     [self.goodsDictionary setObject:model forKey:model.goodId];
     
     //2019北京世园会纪念银章大全
@@ -40,8 +40,11 @@
     model1.goodName = @"2019北京世园会纪念银章大全40g";
     model1.goodId = @"001002";
     model1.goodUnit = @"盒";
-    model1.goodPrice = @"1380";
-    model1.disType = DiscountType9;
+    model1.goodPrice = 1380;
+    model1.disModel = [[PMSSDiscountModel alloc] init];
+    model1.disModel.discoutName =@"9折券";
+    model1.disModel.discoutNum = 0.9;
+    model1.disModel.discoutType = DiscountType9;
     [self.goodsDictionary setObject:model1 forKey:model.goodId];
     
     //招财进宝
@@ -49,8 +52,12 @@
     model2.goodName = @"招财进宝";
     model2.goodId = @"003001";
     model2.goodUnit = @"条";
-    model2.goodPrice = @"1580";
-    model2.disType = DiscountType95;
+    model2.goodPrice = 1580;
+    model2.disModel = [[PMSSDiscountModel alloc] init];
+    model2.disModel.discoutName =@"95折券";
+    model2.disModel.discoutNum = 0.95;
+    model2.disModel.discoutType = DiscountType95;
+   
     [self.goodsDictionary setObject:model2 forKey:model.goodId];
     
     //水晶之恋
@@ -58,7 +65,7 @@
     model3.goodName = @"水晶之恋";
     model3.goodId = @"003002";
     model3.goodUnit = @"条";
-    model3.goodPrice = @"980";
+    model3.goodPrice = 980;
     model3.fullSubArray = @[@(FullSubTypeSubHalf),@(FullSubTypeSubOne)];
     [self.goodsDictionary setObject:model3 forKey:model.goodId];
     
@@ -67,7 +74,7 @@
     model3.goodName = @"中国经典钱币套装";
     model3.goodId = @"002002";
     model3.goodUnit = @"套";
-    model3.goodPrice = @"998";
+    model3.goodPrice = 998;
     model3.fullSubArray = @[@(FullSubTypeTwo),@(FullSubTypeOne)];
     [self.goodsDictionary setObject:model4 forKey:model.goodId];
     
@@ -77,9 +84,12 @@
     model5.goodName = @"守扩之羽比翼双飞4.8g";
     model5.goodId = @"002001";
     model5.goodUnit = @"条";
-    model5.goodPrice = @"1080";
+    model5.goodPrice = 1080;
     model5.fullSubArray = @[@(FullSubTypeSubHalf),@(FullSubTypeSubOne)];
-    model5.disType = DiscountType95;
+    model5.disModel = [[PMSSDiscountModel alloc] init];
+    model5.disModel.discoutName =@"95折券";
+    model5.disModel.discoutNum = 0.95;
+    model5.disModel.discoutType = DiscountType95;
     [self.goodsDictionary setObject:model5 forKey:model.goodId];
     
     //国银象棋12g
@@ -87,9 +97,12 @@
     model6.goodName = @"银象棋12g";
     model6.goodId = @"002003";
     model6.goodUnit = @"套";
-    model6.goodPrice = @"698";
+    model6.goodPrice = 698;
     model6.fullSubArray = @[@(FullSubTypeOne),@(FullSubTypeTwo),@(FullSubTypeThree)];
-    model6.disType = DiscountType9;
+    model6.disModel = [[PMSSDiscountModel alloc] init];
+    model6.disModel.discoutName =@"9折券";
+    model6.disModel.discoutNum = 0.9;
+    model6.disModel.discoutType = DiscountType9;
     [self.goodsDictionary setObject:model6 forKey:model.goodId];
     
     
@@ -105,6 +118,54 @@
     return [self.goodsDictionary objectForKey:goodsId];
     
 }
+
+
+- (CGFloat)getTotalPriceWithGoodModel:(PMSSGoodsModel *)goodModel amount:(NSUInteger)amount discountArray:(NSArray *)array
+{
+    CGFloat originTotalPrice  = goodModel.goodPrice * amount;
+    
+    CGFloat discountPrice = 0.0f;
+    
+    if (array.count == 0 || !goodModel.disModel)
+    {
+        discountPrice = originTotalPrice;
+    }else
+    {
+        for (PMSSDiscountModel *model in array) {
+            
+            if (model.discoutType == goodModel.disModel.discoutType)
+            {
+                discountPrice = originTotalPrice * model.discoutNum;
+            }
+        }
+    }
+    
+    CGFloat fullSubPrice = 0.0f;
+    if (goodModel.fullSubArray.count == 0)
+    {
+        fullSubPrice = originTotalPrice;
+    }else
+    {
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    return 0.0;
+}
+
+
+
+
+
+
 
 - (NSMutableDictionary *)goodsDictionary
 {
